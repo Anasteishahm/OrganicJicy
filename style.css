@@ -25,17 +25,70 @@ body {
     grid-template-columns: 1fr 1fr 100px;
     grid-template-areas: "logo nav search";
     /*grid-template: "logo nav search" max-content / 1fr 1fr 100px;*/
+    align-items: center;
+    justify-items: start;
+    padding: 20px 0;
+
+    text-transform: uppercase;
 }
 
 .header__logo-wrapper {
     grid-area: logo;
+    justify-self: end;
 }
 
 .logo {
+    font-family: 'Secular One', sans-serif;
+    font-weight: 400;
+    color: #FF4747;
+    font-size: 24px;
+    width: 150px;
+    line-height: 1;
 }
 
 .header__nav {
     grid-area: nav;
+}
+
+.header__nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+.header__nav a {
+    padding: 15px;
+    transition: color 0.5s;
+    position: relative;
+    display: inline-block;
+}
+
+.header__nav a:hover {
+    color: #01BCB5;
+}
+
+.header__nav a:active {
+    color: #01928D;
+}
+
+.header__nav a::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 100%;
+
+    background-color: #01BCB5;
+
+    position: absolute;
+    left: 15px;
+    bottom: -200%;
+}
+
+.header__nav a:hover::after {
+    bottom: -80%;
+}
+
+.header__nav a:active::after {
+    background-color: #01928D;
 }
 
 .search {
