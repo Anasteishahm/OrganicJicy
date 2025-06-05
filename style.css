@@ -30,6 +30,7 @@ body {
     padding: 20px 0;
 
     text-transform: uppercase;
+    overflow: hidden;
 }
 
 .header__logo-wrapper {
@@ -62,7 +63,7 @@ body {
     display: inline-block;
 }
 
-.header__nav a:hover {
+.header__nav a:hover, .logo:hover {
     color: #01BCB5;
 }
 
@@ -81,6 +82,8 @@ body {
     position: absolute;
     left: 15px;
     bottom: -200%;
+
+    transition: bottom 0.5s, background-color 0.2s;
 }
 
 .header__nav a:hover::after {
@@ -93,4 +96,92 @@ body {
 
 .search {
     grid-area: search;
+}
+
+.search__icon {
+    transition: fill 0.2s;
+}
+
+.search__icon:hover {
+    fill: #01BCB5;
+}
+
+.search__icon:active {
+    fill: #01928D;
+}
+
+/** MAIN **/
+
+.main {
+    display: grid;
+    grid-template-rows: 3fr 1fr 3fr;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    grid-template-areas: "slider-arrows healthy thirsty thirsty"
+                         "slider-arrows healthy slider-dots orange"
+                          "freshy healthy slider-dots orange";
+
+    /*grid-template: "slider-arrows healthy thirsty thirsty" 3fr*/
+    /*               "slider-arrows healthy slider-dots orange" 1fr*/
+    /*               "freshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;*/
+}
+
+/** SLIDER ARROWS **/
+
+.slider-arrows {
+    position: relative;
+    grid-area: slider-arrows;
+}
+
+.slider-arrows__items-wrapper {
+}
+
+.slider-arrows__item {
+}
+
+.slider-arrows__nav {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider-arrows__arrow {
+    color: #fff;
+    font-size: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+}
+
+.slider-arrows__arrow--left {
+}
+
+.btn {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn:active {
+    opacity: 0.6;
+}
+
+.slider-arrows__btn {
+}
+
+.slider-arrows__arrow--right {
 }
