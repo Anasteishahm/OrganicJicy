@@ -279,7 +279,7 @@ body {
 }
 
 .title span {
-   font-size: 60px;
+    font-size: 60px;
     font-weight: 400;
     letter-spacing: 2px;
     display: block;
@@ -475,7 +475,7 @@ body {
 }
 
 .logo-img:hover {
-   fill: #00C2BA;
+    fill: #00C2BA;
 }
 
 .footer__logo {
@@ -522,6 +522,11 @@ body {
     }
 }
 
+.slider-dots__item, .slider-arrows__item {
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 1200px) {
     .main {
         grid-template-rows: auto;
@@ -536,11 +541,6 @@ body {
         height: 300px;
     }
 
-    .slider-dots__item, .slider-arrows__item {
-        width: 100%;
-        height: 100%;
-    }
-
     .wrapper-down {
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -548,7 +548,7 @@ body {
     }
 
     .common--row-rev {
-       padding-right: 90px;
+        padding-right: 90px;
     }
 
     .sidebar .common__desc {
@@ -601,10 +601,77 @@ body {
     }
 
     .common--col-rev .common__desc, .thirsty .common__desc, .sidebar .common__desc {
-       max-width: unset;
+        max-width: unset;
     }
 
     .common--row-rev {
         padding-right: 30px;
     }
+
+    .sidebar {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    .common {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .form__input {
+        width: 170px;
+    }
+
+    .header, .footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/*------Бургер меню------*/
+
+.menu-icon {
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+
+.menu-icon::after, .menu-icon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.menu-icon::before {
+    top: 0;
+    transition: transform 0.3s, top 0.3s 0.3s;
+}
+
+.menu-icon::after {
+    bottom: 0;
+    transition: transform 0.3s, bottom 0.3s 0.3s;
+}
+
+.menu-icon__line, .menu-icon::after, .menu-icon::before {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.menu-icon--active .menu-icon__line {
+    display: none;
+}
+
+.menu-icon--active::before {
+    transform: translateY(-50%) rotate(45deg);
+    top: 50%;
+    transition: top 0.3s, transform 0.3s;
+}
+
+.menu-icon--active::after {
+    transform: translateY(50%) rotate(-45deg);
+    bottom: 50%;
+    transition: bottom 0.3s, transform 0.3s;
 }
